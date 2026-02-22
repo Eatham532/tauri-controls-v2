@@ -10,7 +10,11 @@ try {
   if ($whoami) { Write-Host "npm user: $whoami" }
 } catch { Write-Host "npm user: (not logged in or npm not available)" }
 
-$apps = Get-ChildItem -Path "..\apps" -Directory
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$repoRoot = Resolve-Path (Join-Path $scriptDir "..")
+$appsPath = Join-Path $repoRoot 'apps'
+if (-not (Test-Path $appsPath)) { Write-Host "Could not find apps directory at $appsPath"; exit 1 }
+$apps = Get-ChildItem -Path $appsPath -Directory
 foreach ($app in $apps) {
   $pkgPath = Join-Path $app.FullName 'package.json'
   if (-not (Test-Path $pkgPath)) { continue }

@@ -8,6 +8,8 @@ fi
 
 echo "Publish script for all apps (dry-run by default). Use --publish to actually publish."
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="${script_dir}/.."
 whoami=$(npm whoami 2>/dev/null || true)
 if [ -n "$whoami" ]; then
   echo "npm user: $whoami"
@@ -15,7 +17,7 @@ else
   echo "npm user: (not logged in or npm not available)"
 fi
 
-for app in apps/*; do
+for app in "${repo_root}/apps"/*; do
   [ -f "$app/package.json" ] || continue
   name=$(jq -r .name "$app/package.json")
   is_private=$(jq -r '.private // false' "$app/package.json")
