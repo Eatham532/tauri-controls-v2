@@ -1,5 +1,5 @@
 {
-  "name": "tauri-controls-root",
+  "name": "tauri-controls-v2-root",
   "private": true,
   "version": "1.0.0",
   "workspaces": ["apps/*"],

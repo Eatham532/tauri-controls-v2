@@ -1,9 +1,9 @@
 @import "tailwindcss/theme";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .tauri-controls {
   @import "tailwindcss";
-
-  @custom-variant dark (&:where(.dark, .dark *));
 
   button,
   input,

@@ -158,9 +158,9 @@
 
 <style lang="postcss">
   :global(html.dark) {
-    background-color: theme(colors.sky.950);
+    background-color: var(--color-sky-950);
   }
   :global(html) {
-    background-color: theme(colors.slate.50);
+    background-color: var(--color-slate-50);
   }
 </style>
