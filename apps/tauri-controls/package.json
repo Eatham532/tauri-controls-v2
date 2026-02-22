@@ -1,8 +1,8 @@
 {
-  "name": "tauri-controls",
+  "name": "@tauri-controls-v2/react",
   "description": "🚥 Native-looking window controls for Tauri 2.",
   "private": false,
-  "version": "0.4.0",
+  "version": "0.4.1",
   "type": "module",
   "license": "MIT",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/eatham532/tauri-controls-v2"
+    "url": "git+https://github.com/eatham532/tauri-controls-v2.git"
   },
   "author": "eatham532",
   "bugs": {
