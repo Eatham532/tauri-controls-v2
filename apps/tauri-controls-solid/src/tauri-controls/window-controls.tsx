@@ -19,7 +19,7 @@ export function WindowControls(props: WindowControlsProps) {
   const hideMethod = () => local.hideMethod ?? "display"
   const className = () =>
     twMerge(
-      "flex",
+      "tauri-controls flex",
       local.class,
       local.hide && (hideMethod() === "display" ? "hidden" : "invisible"),
       local.justify && (platform() === "macos" ? "ml-0" : "ml-auto")

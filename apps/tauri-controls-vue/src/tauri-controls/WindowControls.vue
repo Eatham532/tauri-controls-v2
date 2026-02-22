@@ -37,7 +37,7 @@ onMounted(() => {
 })
 
 const customClass = twMerge(
-  "flex",
+  "tauri-controls flex",
   props.className,
   props.hide && (props.hideMethod === "display" ? "hidden" : "invisible")
 )

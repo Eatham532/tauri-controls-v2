@@ -23,7 +23,7 @@ export function WindowControls({
   }, [])
 
   const customClass = cn(
-    "flex",
+    "tauri-controls flex",
     className,
     hide && (hideMethod === "display" ? "hidden" : "invisible")
   )

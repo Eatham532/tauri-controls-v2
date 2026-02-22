@@ -11,7 +11,7 @@
   export let justify = false
 
   const customClass = cn(
-    "flex",
+    "tauri-controls flex",
     $$props.class,
     hide && (hideMethod === "display" ? "hidden" : "invisible")
   )

@@ -46,7 +46,7 @@ const customProps = (ml: string) => {
   <div
     :class="
       twMerge(
-        'bg-background flex select-none flex-row overflow-hidden',
+        'tauri-controls bg-background flex select-none flex-row overflow-hidden',
         $attrs.class as string
       )
     "

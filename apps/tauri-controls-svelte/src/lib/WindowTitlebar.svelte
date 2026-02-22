@@ -32,7 +32,7 @@
 <div
   {...$$props}
   class={cn(
-    "bg-background flex select-none flex-row overflow-hidden",
+    "tauri-controls bg-background flex select-none flex-row overflow-hidden",
     $$props.class
   )}
   data-tauri-drag-region
