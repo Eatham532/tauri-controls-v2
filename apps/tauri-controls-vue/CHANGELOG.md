@@ -1,4 +1,4 @@
-# @tauri-controls/vue
+# @tauri-controls-v2/vue
 
 ## 0.4.0
 

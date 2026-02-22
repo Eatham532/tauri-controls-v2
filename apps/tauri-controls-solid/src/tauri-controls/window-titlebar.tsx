@@ -1,4 +1,4 @@
-import { createMemo, mergeProps, splitProps } from "solid-js"
+import { createMemo, createResource, mergeProps, splitProps } from "solid-js"
 import { twMerge } from "tailwind-merge"
 import { getOsType } from "./libs/plugin-os"
 import type { WindowTitlebarProps } from "./types"
@@ -12,14 +12,16 @@ export function WindowTitlebar(props: WindowTitlebarProps) {
     "windowControlsProps",
   ])
 
+  const [osType] = createResource(getOsType)
+
   const left = createMemo(() => {
     if (local.controlsOrder === "left") return true
     if (local.controlsOrder === "right") return false
     if (local.controlsOrder === "platform") {
-      return (local.windowControlsProps?.platform ?? getOsType()) === "macos"
+      return (local.windowControlsProps?.platform ?? osType()) === "macos"
     }
     // `local.controlsOrder` defaults to "system"
-    return getOsType() === "macos"
+    return osType() === "macos"
   })
 
   const windowControlsProps = mergeProps(local.windowControlsProps, {
@@ -35,7 +37,7 @@ export function WindowTitlebar(props: WindowTitlebarProps) {
   return (
     <div
       class={twMerge(
-        "tauri-controls bg-background flex select-none flex-row overflow-hidden",
+        "tauri-controls bg-background flex flex-row overflow-hidden select-none",
         local.class
       )}
       data-tauri-drag-region

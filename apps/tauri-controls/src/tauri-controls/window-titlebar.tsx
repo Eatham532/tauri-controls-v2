@@ -44,7 +44,7 @@ export function WindowTitlebar({
   return (
     <div
       className={cn(
-        "tauri-controls bg-background flex select-none flex-row overflow-hidden",
+        "tauri-controls bg-background flex flex-row overflow-hidden select-none",
         className
       )}
       data-tauri-drag-region

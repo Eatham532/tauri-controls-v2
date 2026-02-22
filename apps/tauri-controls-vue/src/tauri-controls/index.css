@@ -1,2 +1,35 @@
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/theme";
+
+.tauri-controls {
+  @import "tailwindcss";
+
+  @custom-variant dark (&:where(.dark, .dark *));
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    cursor: default;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}

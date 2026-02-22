@@ -4,7 +4,7 @@ const items = ["File", "Edit", "View", "Account", "Theme"]
 
 <template>
   <div
-    class="flex flex-row space-x-2 whitespace-nowrap rounded-md px-2 py-1 shadow"
+    class="flex flex-row space-x-2 rounded-md px-2 py-1 whitespace-nowrap shadow-sm"
   >
     <span v-for="item in items" :key="item">{{ item }}</span>
   </div>

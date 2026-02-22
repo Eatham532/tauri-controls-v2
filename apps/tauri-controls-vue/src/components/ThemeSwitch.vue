@@ -6,7 +6,7 @@ const toggle = () => {
 
 <template>
   <button
-    class="fixed right-1 top-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow dark:bg-slate-950/50"
+    class="fixed top-1 right-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow-sm dark:bg-slate-950/50"
     @click="toggle"
   >
     Toggle Theme

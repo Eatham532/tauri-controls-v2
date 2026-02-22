@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "productName": "tauri-demos",
-  "identifier": "com.yourname.dev",
+  "productName": "tauri-controls-svelte",
+  "identifier": "com.tauri-controls.svelte",
   "build": {
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build",
@@ -15,7 +15,8 @@
     },
     "windows": [
       {
-        "title": "Demo-Solid",
+        "label": "main",
+        "title": "Demo-Svelte",
         "center": true,
         "transparent": true,
         "decorations": false,

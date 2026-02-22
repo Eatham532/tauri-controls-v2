@@ -8,14 +8,14 @@ function App() {
     <div class="h-screen overflow-auto bg-slate-200 text-black/90 dark:bg-slate-900 dark:text-white">
       <div class="flex w-[960px] flex-col space-y-3 px-14 py-6">
         <ThemeSwitch />
-        <span class="w-fit rounded bg-violet-200/20 px-2 font-mono">
-          @tauri-controls/solid
+        <span class="w-fit rounded-sm bg-violet-200/20 px-2 font-mono">
+          @tauri-controls-v2/solid
         </span>
-        <span class="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600">
+        <span class="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600">
           WindowControls
         </span>
         {/* OnlyControls */}
-        <div class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3  shadow dark:border-slate-600">
+        <div class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow-sm dark:border-slate-600">
           <For each={platforms}>{(x) => <OnlyControls platform={x} />}</For>
         </div>
         justify=true:
@@ -25,7 +25,7 @@ function App() {
         <div class="flex border" data-tauri-drag-region>
           <WindowControls platform="macos" justify={true} />
         </div>
-        <span class="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600">
+        <span class="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600">
           WindowTitlebar
         </span>
         <WindowTitlebar class="border">content</WindowTitlebar>
@@ -62,17 +62,17 @@ function App() {
 
 const platforms = ["windows", "macos", "gnome"]
 
-const OnlyControls = ({ platform }: any) => {
-  return <WindowControls platform={platform} />
+const OnlyControls = (props: any) => {
+  return <WindowControls platform={props.platform} />
 }
 
 /* Icon+Title Controls */
-const IMC = ({ platform }: any) => {
+const IMC = (props: any) => {
   return (
     <WindowTitlebar
       controlsOrder="platform"
-      class="h-10 rounded-t-lg border border-dashed border-slate-400  bg-white shadow dark:border-slate-600 dark:bg-slate-800"
-      windowControlsProps={{ platform: platform, class: "" }}
+      class="h-10 rounded-t-lg border border-dashed border-slate-400 bg-white shadow dark:border-slate-600 dark:bg-slate-800"
+      windowControlsProps={{ platform: props.platform, class: "" }}
     >
       <div
         class="flex h-full w-full items-center justify-center"
@@ -86,13 +86,13 @@ const IMC = ({ platform }: any) => {
 }
 
 /* Icon Menu Title Controls */
-const IMTC = ({ platform }: any) => {
+const IMTC = (props: any) => {
   return (
     <WindowTitlebar
       controlsOrder="platform"
-      class="h-10 rounded-t-lg  bg-white shadow dark:bg-slate-800"
+      class="h-10 rounded-t-lg bg-white shadow dark:bg-slate-800"
       windowControlsProps={{
-        platform: platform,
+        platform: props.platform,
       }}
       data-tauri-drag-region
     >
@@ -115,7 +115,7 @@ const Menu = () => {
   const items = ["File", "Edit", "View", "Account", "Theme"]
 
   return (
-    <div class="flex flex-row space-x-2 whitespace-nowrap rounded-md px-2 py-1 shadow">
+    <div class="flex flex-row space-x-2 rounded-md px-2 py-1 whitespace-nowrap shadow">
       <For each={items}>{(x) => <span>{x}</span>}</For>
     </div>
   )
@@ -128,7 +128,7 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      class="fixed right-1 top-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow dark:bg-slate-950/50"
+      class="fixed top-1 right-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow-sm dark:bg-slate-950/50"
       onClick={toggle}
     >
       Toggle Theme

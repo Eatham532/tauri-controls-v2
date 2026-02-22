@@ -10,21 +10,21 @@ const platforms: platform[] = ["windows", "macos", "gnome"]
 
 <template>
   <div
-    className="h-screen overflow-auto bg-slate-200 text-black/90 dark:bg-slate-900 dark:text-white"
+    class="h-screen overflow-auto bg-slate-200 text-black/90 dark:bg-slate-900 dark:text-white"
   >
     <div class="flex w-[960px] flex-col space-y-3 px-14 py-6">
       <ThemeSwitch />
-      <span class="w-fit rounded bg-violet-200/20 px-2 font-mono">
-        @tauri-controls/vue
+      <span class="w-fit rounded-sm bg-violet-200/20 px-2 font-mono">
+        @tauri-controls-v2/vue
       </span>
       <span
-        class="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600"
+        class="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600"
       >
         WindowControls
       </span>
       <!-- {/* OnlyControls */} -->
       <div
-        class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow dark:border-slate-600"
+        class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow-sm dark:border-slate-600"
       >
         <WindowControls
           v-for="platform in platforms"
@@ -40,7 +40,7 @@ const platforms: platform[] = ["windows", "macos", "gnome"]
         <WindowControls platform="macos" justify />
       </div>
       <span
-        class="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600"
+        class="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600"
       >
         WindowTitlebar
       </span>

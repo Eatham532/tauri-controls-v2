@@ -1,7 +1,6 @@
 {
-  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "productName": "tauri-demos",
-  "identifier": "com.yourname.dev",
+  "productName": "tauri-controls-solid",
+  "identifier": "com.tauri-controls.solid",
   "build": {
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build",
@@ -15,6 +14,7 @@
     },
     "windows": [
       {
+        "label": "main",
         "title": "Demo-Solid",
         "center": true,
         "transparent": true,

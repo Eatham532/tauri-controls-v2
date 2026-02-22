@@ -6,7 +6,7 @@
   on:click
   {...$$props}
   class={cn(
-    "inline-flex cursor-default items-center justify-center bg-sky-100",
+    "inline-flex cursor-default items-center justify-center",
     $$props.class
   )}
 >

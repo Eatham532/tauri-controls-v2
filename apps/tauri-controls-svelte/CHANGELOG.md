@@ -1,4 +1,4 @@
-# @tauri-controls/svelte
+# @tauri-controls-v2/svelte
 
 ## 0.4.0
 

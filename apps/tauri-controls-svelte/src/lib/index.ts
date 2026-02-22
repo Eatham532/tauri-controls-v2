@@ -1,4 +1,4 @@
-// import "../style.css"
+import "./index.css"
 import WindowControls from "$lib/WindowControls.svelte"
 import WindowTitlebar from "$lib/WindowTitlebar.svelte"
 

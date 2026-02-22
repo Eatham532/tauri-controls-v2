@@ -1,12 +1,13 @@
 import { type, type OsType } from "@tauri-apps/plugin-os"
 
 // A helper function to get the OS type
-export function getOsType(): OsType {
-  return type()
+export async function getOsType(): Promise<OsType> {
+  return await type()
 }
 
-export function getPlatform() {
-  switch (getOsType()) {
+export async function getPlatform() {
+  const os = await getOsType()
+  switch (os) {
     case "macos":
       return "macos"
     case "linux":

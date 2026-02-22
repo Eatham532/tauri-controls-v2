@@ -8,14 +8,14 @@ function App() {
     <div className="h-screen overflow-auto bg-slate-200 text-black/90 dark:bg-slate-900 dark:text-white">
       <div className="flex w-[960px] flex-col space-y-3 px-14 py-6">
         <ThemeSwitch />
-        <span className="w-fit rounded bg-violet-200/20 px-2 font-mono">
+        <span className="w-fit rounded-sm bg-violet-200/20 px-2 font-mono">
           tauri-controls
         </span>
-        <span className="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600">
+        <span className="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600">
           WindowControls
         </span>
         {/* OnlyControls */}
-        <div className="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3  shadow dark:border-slate-600">
+        <div className="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow-sm dark:border-slate-600">
           {platforms.map((x) => (
             <OnlyControls key={x} platform={x} />
           ))}
@@ -27,7 +27,7 @@ function App() {
         <div className="flex border" data-tauri-drag-region>
           <WindowControls platform="macos" justify={true} />
         </div>
-        <span className="w-fit border-b border-slate-400 pb-1 pr-10 text-lg font-semibold dark:border-slate-600">
+        <span className="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600">
           WindowTitlebar
         </span>
         <WindowTitlebar className="border">content</WindowTitlebar>
@@ -96,7 +96,7 @@ const IMC = ({ platform }: any) => {
   return (
     <WindowTitlebar
       controlsOrder="platform"
-      className="h-10 rounded-t-lg border border-dashed border-slate-400  bg-white shadow dark:border-slate-600 dark:bg-slate-800"
+      className="h-10 rounded-t-lg border border-dashed border-slate-400 bg-white shadow dark:border-slate-600 dark:bg-slate-800"
       windowControlsProps={{ platform: platform, className: "" }}
     >
       <div
@@ -115,7 +115,7 @@ const IMTC = ({ platform }: any) => {
   return (
     <WindowTitlebar
       controlsOrder="platform"
-      className="h-10 rounded-t-lg  bg-white shadow dark:bg-slate-800"
+      className="h-10 rounded-t-lg bg-white shadow dark:bg-slate-800"
       windowControlsProps={{
         platform: platform,
       }}
@@ -140,7 +140,7 @@ const Menu = () => {
   const items = ["File", "Edit", "View", "Account", "Theme"]
 
   return (
-    <div className="flex flex-row space-x-2 whitespace-nowrap rounded-md px-2 py-1 shadow">
+    <div className="flex flex-row space-x-2 rounded-md px-2 py-1 whitespace-nowrap shadow">
       {items.map((x) => (
         <span key={x}>{x}</span>
       ))}
@@ -155,7 +155,7 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      className="fixed right-1 top-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow dark:bg-slate-950/50"
+      className="fixed top-1 right-1 rounded-xl bg-slate-300 p-2 font-mono font-semibold shadow-sm dark:bg-slate-950/50"
       onClick={toggle}
     >
       Toggle Theme

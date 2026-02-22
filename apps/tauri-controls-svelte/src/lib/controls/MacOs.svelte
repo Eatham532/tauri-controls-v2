@@ -72,7 +72,7 @@
 >
   <Button
     on:click={closeWindow}
-    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/[.12] bg-[#ff544d] text-center text-black/60 hover:bg-[#ff544d] active:bg-[#bf403a] active:text-black/60 dark:border-none"
+    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/12 bg-[#ff544d] text-center text-black/60 hover:bg-[#ff544d] active:bg-[#bf403a] active:text-black/60 dark:border-none"
   >
     {#if isHovering}
       <Icons icon="closeMac" />
@@ -80,7 +80,7 @@
   </Button>
   <Button
     on:click={minimizeWindow}
-    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/[.12]  bg-[#ffbd2e] text-center text-black/60 hover:bg-[#ffbd2e] active:bg-[#bf9122] active:text-black/60 dark:border-none"
+    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/12  bg-[#ffbd2e] text-center text-black/60 hover:bg-[#ffbd2e] active:bg-[#bf9122] active:text-black/60 dark:border-none"
   >
     {#if isHovering}
       <Icons icon="minMac" />
@@ -88,7 +88,7 @@
   </Button>
   <Button
     on:click={isAltKeyPressed ? maximizeWindow : fullscreenWindow}
-    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/[.12] bg-[#28c93f] text-center text-black/60 hover:bg-[#28c93f] active:bg-[#1e9930] active:text-black/60 dark:border-none"
+    class="aspect-square h-3 w-3 content-center items-center justify-center self-center rounded-full border border-black/12 bg-[#28c93f] text-center text-black/60 hover:bg-[#28c93f] active:bg-[#1e9930] active:text-black/60 dark:border-none"
   >
     {#if isHovering}
       {#if isAltKeyPressed}

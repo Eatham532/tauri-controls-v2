@@ -5,12 +5,11 @@
   import {
     closeWindow,
     initializeAppWindow,
+    isWindowMaximized,
     maximizeWindow,
     minimizeWindow
   } from "$lib/utils/window"
   import { onMount } from "svelte"
-
-  const isWindowMaximized = 0
 
   onMount(async () => {
     await initializeAppWindow()
@@ -20,7 +19,7 @@
 <div {...$$props} class={cn("h-8 select-none", $$props.class)}>
   <Button
     on:click={() => minimizeWindow()}
-    class="max-h-8 w-[46px] cursor-default rounded-none bg-transparent text-black/90 hover:bg-black/[.05] active:bg-black/[.03]  dark:text-white dark:hover:bg-white/[.06] dark:active:bg-white/[.04]"
+    class="max-h-8 w-[46px] cursor-default rounded-none bg-transparent text-black/90 hover:bg-black/5 active:bg-black/3  dark:text-white dark:hover:bg-white/6 dark:active:bg-white/4"
   >
     <Icons icon="minimizeWin" />
   </Button>
@@ -28,11 +27,11 @@
     on:click={() => maximizeWindow()}
     class={cn(
       "max-h-8 w-[46px] cursor-default rounded-none bg-transparent",
-      "text-black/90 hover:bg-black/[.05] active:bg-black/[.03] dark:text-white dark:hover:bg-white/[.06] dark:active:bg-white/[.04]"
-      // !isMaximizable && "text-white/[.36]",
+      "text-black/90 hover:bg-black/5 active:bg-black/3 dark:text-white dark:hover:bg-white/6 dark:active:bg-white/4"
+      // !isMaximizable && "text-white/36",
     )}
   >
-    {#if isWindowMaximized}
+    {#if $isWindowMaximized}
       <Icons icon="maximizeRestoreWin" />
     {:else}
       <Icons icon="maximizeWin" />

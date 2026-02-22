@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
-  "productName": "tauri-demos",
-  "identifier": "com.yourname.dev",
+  "productName": "tauri-controls-vue",
+  "identifier": "com.tauri-controls.vue",
   "build": {
     "beforeDevCommand": "bun run dev",
     "beforeBuildCommand": "bun run build",
@@ -15,6 +15,7 @@
     },
     "windows": [
       {
+        "label": "main",
         "fullscreen": false,
         "title": "Demo-Vue",
         "center": true,

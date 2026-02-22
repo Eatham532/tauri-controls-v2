@@ -1,4 +1,5 @@
 import { resolve } from "node:path"
+import tailwindcss from "@tailwindcss/vite"
 import terser from "@rollup/plugin-terser"
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
@@ -8,6 +9,7 @@ import * as packageJson from "./package.json"
 // https://vitejs.dev/config/
 export default defineConfig((_) => ({
   plugins: [
+    tailwindcss(),
     dts({
       include: ["./src/tauri-controls"],
       rollupTypes: true,
@@ -34,7 +36,7 @@ export default defineConfig((_) => ({
           "tailwind-merge": "tailwindMerge",
           "@tauri-apps/plugin-window": "pluginWindow",
         },
-        intro: 'import "./style.css";',
+        intro: 'import "./tauri-controls.css";',
         plugins: [terser()],
       },
     },

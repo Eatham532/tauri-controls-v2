@@ -16,7 +16,7 @@ export function Windows(props: ComponentProps<"div">) {
     <div class={twMerge("h-8", local.class)} {...otherProps}>
       <Button
         onClick={minimizeWindow}
-        class="max-h-8 w-[46px] cursor-default rounded-none bg-transparent text-black/90 hover:bg-black/[.05] active:bg-black/[.03]  dark:text-white dark:hover:bg-white/[.06] dark:active:bg-white/[.04]"
+        class="max-h-8 w-[46px] cursor-default rounded-none bg-transparent text-black/90 hover:bg-black/5 active:bg-black/3 dark:text-white dark:hover:bg-white/6 dark:active:bg-white/4"
       >
         <Icons.minimizeWin />
       </Button>
@@ -24,8 +24,8 @@ export function Windows(props: ComponentProps<"div">) {
         onClick={maximizeWindow}
         class={twMerge(
           "max-h-8 w-[46px] cursor-default rounded-none bg-transparent",
-          "text-black/90 hover:bg-black/[.05] active:bg-black/[.03] dark:text-white dark:hover:bg-white/[.06] dark:active:bg-white/[.04]"
-          // !isMaximizable && "text-white/[.36]",
+          "text-black/90 hover:bg-black/5 active:bg-black/3 dark:text-white dark:hover:bg-white/6 dark:active:bg-white/4"
+          // !isMaximizable && "text-white/36",
         )}
       >
         {isWindowMaximized() ? (

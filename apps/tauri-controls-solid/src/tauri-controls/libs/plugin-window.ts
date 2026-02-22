@@ -1,30 +1,44 @@
-import { getCurrentWindow } from "@tauri-apps/api/window"
 import { createSignal } from "solid-js"
 
 const [isWindowMaximized, setIsWindowMaximized] = createSignal(false)
 export { isWindowMaximized }
 
-const watchWindowMaximized = () => {
-  const window = getCurrentWindow()
-  window.isMaximized().then(setIsWindowMaximized)
-  window.onResized(() => window.isMaximized().then(setIsWindowMaximized))
+const getWin = async () => {
+  const mod = await import("@tauri-apps/api")
+  return mod.window.getCurrentWindow()
+}
+
+const watchWindowMaximized = async () => {
+  if (typeof window !== "undefined") {
+    const appWin = await getWin()
+    const isMaximized = await appWin.isMaximized()
+    setIsWindowMaximized(isMaximized)
+
+    await appWin.onResized(async () => {
+      const isMaximized = await appWin.isMaximized()
+      setIsWindowMaximized(isMaximized)
+    })
+  }
 }
 watchWindowMaximized()
 
 export const minimizeWindow = async () => {
-  await getCurrentWindow().minimize()
+  const window = await getWin()
+  await window.minimize()
 }
 
 export const maximizeWindow = async () => {
-  await getCurrentWindow().toggleMaximize()
+  const window = await getWin()
+  await window.toggleMaximize()
 }
 
 export const fullscreenWindow = async () => {
-  const window = getCurrentWindow()
+  const window = await getWin()
   const fullscreen = await window.isFullscreen()
   await window.setFullscreen(!fullscreen)
 }
 
 export const closeWindow = async () => {
-  await getCurrentWindow()?.close()
+  const window = await getWin()
+  await window.close()
 }

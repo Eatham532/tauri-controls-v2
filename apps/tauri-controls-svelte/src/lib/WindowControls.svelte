@@ -1,14 +1,20 @@
 <script lang="ts">
   import { osType } from "$lib/utils/os"
   import { cn } from "$lib/utils/utils"
+  import { initializeAppWindow } from "$lib/utils/window"
   import Gnome from "./controls/linux/Gnome.svelte"
   import MacOs from "./controls/MacOs.svelte"
   import Windows from "./controls/Windows.svelte"
+  import { onMount } from "svelte"
 
   export let platform = "windows"
   export let hide = false
   export let hideMethod = "display"
   export let justify = false
+
+  onMount(() => {
+    initializeAppWindow()
+  })
 
   const customClass = cn(
     "tauri-controls flex",

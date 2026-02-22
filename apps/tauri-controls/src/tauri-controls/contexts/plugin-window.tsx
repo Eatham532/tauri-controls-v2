@@ -36,7 +36,7 @@ export const TauriAppWindowProvider: React.FC<TauriAppWindowProviderProps> = ({
   useEffect(() => {
     if (typeof window !== "undefined") {
       import("@tauri-apps/api").then((module) => {
-        setAppWindow(module.window.getCurrent())
+        setAppWindow(module.window.getCurrentWindow())
       })
     }
   }, [])
@@ -50,25 +50,28 @@ export const TauriAppWindowProvider: React.FC<TauriAppWindowProviderProps> = ({
   }, [appWindow])
 
   useEffect(() => {
+    let unlisten: (() => void) | undefined = undefined
+
     getOsType().then((osname) => {
       // temporary: https://github.com/agmmnn/tauri-controls/issues/10#issuecomment-1675884962
       if (osname !== "macos") {
         updateIsWindowMaximized()
-        let unlisten: () => void = () => {}
 
         const listen = async () => {
           if (appWindow) {
-            unlisten = await appWindow.onResized(() => {
+            const unlistenFn = await appWindow.onResized(() => {
               updateIsWindowMaximized()
             })
+            unlisten = unlistenFn
           }
         }
         listen()
-
-        // Cleanup the listener when the component unmounts
-        return () => unlisten && unlisten()
       }
     })
+
+    return () => {
+      unlisten && unlisten()
+    }
   }, [appWindow, updateIsWindowMaximized])
 
   const minimizeWindow = async () => {

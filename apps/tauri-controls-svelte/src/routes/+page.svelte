@@ -16,17 +16,17 @@
 >
   <div class="flex w-[960px] flex-col space-y-3 px-14 py-6">
     <ThemeSwitch />
-    <span class="w-fit rounded bg-orange-200/20 px-2 font-mono"
-      >@tauri-controls/svelte</span
+    <span class="w-fit rounded-sm bg-orange-200/20 px-2 font-mono"
+      >@tauri-controls-v2/svelte</span
     >
     <span
-      class="w-fit border-b border-slate-400 pb-1 pr-10 dark:border-slate-600 text-lg font-semibold"
+      class="w-fit border-b border-slate-400 pr-10 pb-1 text-lg font-semibold dark:border-slate-600"
     >
       WindowControls
     </span>
-    <!-- OnlyControls  -->
+    <!-- OnlyControls -->
     <div
-      class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow dark:border-slate-600"
+      class="flex w-fit space-x-3 rounded-xl border border-dashed border-slate-400 p-3 shadow-sm dark:border-slate-600"
     >
       {#each platforms as platform}
         <WindowControls {platform} />

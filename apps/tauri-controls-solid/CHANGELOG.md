@@ -1,4 +1,4 @@
-# @tauri-controls/solid
+# @tauri-controls-v2/solid
 
 ## 0.4.0
 
