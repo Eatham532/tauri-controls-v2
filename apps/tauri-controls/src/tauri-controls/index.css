@@ -3,8 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .tauri-controls {
-  @import "tailwindcss";
+  @import "tailwindcss" important;
 
+  /* RESET STYLES */
   button,
   input,
   optgroup,
