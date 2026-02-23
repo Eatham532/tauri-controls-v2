@@ -7,7 +7,7 @@ import dts from "vite-plugin-dts"
 import * as packageJson from "./package.json"
 
 // https://vitejs.dev/config/
-export default defineConfig(async () => ({
+export default defineConfig({
   plugins: [
     tailwindcss(),
     vue(),
@@ -35,6 +35,10 @@ export default defineConfig(async () => ({
           "@tauri-apps/plugin-window": "pluginWindow",
         },
         intro: 'import "./tauri-controls.css";',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo?.name && assetInfo.name.endsWith('.css')) return 'tauri-controls.css'
+          return 'assets/[name]-[hash][extname]'
+        },
         plugins: [terser()],
       },
     },
@@ -52,4 +56,4 @@ export default defineConfig(async () => ({
   // 3. to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
   envPrefix: ["VITE_", "TAURI_"],
-}))
+})

@@ -41,6 +41,11 @@ export default defineConfig({
           "@tauri-apps/plugin-window": "pluginWindow",
         },
         intro: 'import "./tauri-controls.css";',
+        assetFileNames: (assetInfo) => {
+          // Ensure emitted CSS uses a stable filename consumers expect
+          if (assetInfo?.name && assetInfo.name.endsWith('.css')) return 'tauri-controls.css'
+          return 'assets/[name]-[hash][extname]'
+        },
         plugins: [terser()],
       },
     },
