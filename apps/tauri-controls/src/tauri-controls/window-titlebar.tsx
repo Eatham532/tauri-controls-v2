@@ -42,25 +42,27 @@ export function WindowTitlebar({
   }
 
   return (
-    <div
-      className={cn(
-        "tauri-controls bg-background flex flex-row overflow-hidden select-none",
-        className
-      )}
-      data-tauri-drag-region
-      {...props}
-    >
-      {left ? (
-        <>
-          <WindowControls {...customProps("ml-0")} />
-          {children}
-        </>
-      ) : (
-        <>
-          {children}
-          <WindowControls {...customProps("ml-auto")} />
-        </>
-      )}
+    <div className="tauri-controls" style={{ display: "contents" }}>
+      <div
+        className={cn(
+          "bg-background flex flex-row overflow-hidden select-none",
+          className
+        )}
+        data-tauri-drag-region
+        {...props}
+      >
+        {left ? (
+          <>
+            <WindowControls {...customProps("ml-0")} />
+            {children}
+          </>
+        ) : (
+          <>
+            {children}
+            <WindowControls {...customProps("ml-auto")} />
+          </>
+        )}
+      </div>
     </div>
   )
 }

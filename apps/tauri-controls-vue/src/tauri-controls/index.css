@@ -1,8 +1,7 @@
-@import "tailwindcss/theme";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
 .tauri-controls {
+  @import "tailwindcss/theme";
   @import "tailwindcss" important;
 
   button,

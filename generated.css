@@ -1,0 +1,945 @@
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *,
+    ::backdrop,
+    :after,
+    :before {
+      --tw-space-y-reverse: 0;
+      --tw-space-x-reverse: 0;
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
+    }
+  }
+}
+:host,
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --color-sky-300: oklch(82.8% 0.111 230.318);
+  --color-sky-500: oklch(68.5% 0.169 237.323);
+  --color-sky-600: oklch(58.8% 0.158 241.966);
+  --color-violet-200: oklch(89.4% 0.057 293.283);
+  --color-rose-700: oklch(51.4% 0.222 16.935);
+  --color-slate-200: oklch(92.9% 0.013 255.508);
+  --color-slate-300: oklch(86.9% 0.022 252.894);
+  --color-slate-400: oklch(70.4% 0.04 256.788);
+  --color-slate-600: oklch(44.6% 0.043 257.281);
+  --color-slate-800: oklch(27.9% 0.041 260.031);
+  --color-slate-900: oklch(20.8% 0.042 265.755);
+  --color-slate-950: oklch(12.9% 0.042 264.695);
+  --color-black: #000;
+  --color-white: #fff;
+  --spacing: 0.25rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.55556;
+  --font-weight-semibold: 600;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+}
+@layer base {
+  .tauri-controls *,
+  .tauri-controls ::backdrop,
+  .tauri-controls :after,
+  .tauri-controls :before {
+    border: 0 solid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .tauri-controls ::file-selector-button {
+    border: 0 solid;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  .tauri-controls :host,
+  .tauri-controls html {
+    -webkit-text-size-adjust: 100%;
+    font-family: var(
+      --default-font-family,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"
+    );
+    font-feature-settings: var(--default-font-feature-settings, normal);
+    font-variation-settings: var(--default-font-variation-settings, normal);
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tauri-controls hr {
+    border-top-width: 1px;
+    color: inherit;
+    height: 0;
+  }
+  .tauri-controls abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+  }
+  .tauri-controls h1,
+  .tauri-controls h2,
+  .tauri-controls h3,
+  .tauri-controls h4,
+  .tauri-controls h5,
+  .tauri-controls h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+  .tauri-controls a {
+    color: inherit;
+    -webkit-text-decoration: inherit;
+    text-decoration: inherit;
+  }
+  .tauri-controls b,
+  .tauri-controls strong {
+    font-weight: bolder;
+  }
+  .tauri-controls code,
+  .tauri-controls kbd,
+  .tauri-controls pre,
+  .tauri-controls samp {
+    font-family: var(
+      --default-mono-font-family,
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Monaco,
+      Consolas,
+      "Liberation Mono",
+      "Courier New",
+      monospace
+    );
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-size: 1em;
+    font-variation-settings: var(
+      --default-mono-font-variation-settings,
+      normal
+    );
+  }
+  .tauri-controls small {
+    font-size: 80%;
+  }
+  .tauri-controls sub,
+  .tauri-controls sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  .tauri-controls sub {
+    bottom: -0.25em;
+  }
+  .tauri-controls sup {
+    top: -0.5em;
+  }
+  .tauri-controls table {
+    border-collapse: collapse;
+    border-color: inherit;
+    text-indent: 0;
+  }
+  .tauri-controls :-moz-focusring {
+    outline: auto;
+  }
+  .tauri-controls progress {
+    vertical-align: baseline;
+  }
+  .tauri-controls summary {
+    display: list-item;
+  }
+  .tauri-controls menu,
+  .tauri-controls ol,
+  .tauri-controls ul {
+    list-style: none;
+  }
+  .tauri-controls audio,
+  .tauri-controls canvas,
+  .tauri-controls embed,
+  .tauri-controls iframe,
+  .tauri-controls img,
+  .tauri-controls object,
+  .tauri-controls svg,
+  .tauri-controls video {
+    display: block;
+    vertical-align: middle;
+  }
+  .tauri-controls img,
+  .tauri-controls video {
+    height: auto;
+    max-width: 100%;
+  }
+  .tauri-controls button,
+  .tauri-controls input,
+  .tauri-controls optgroup,
+  .tauri-controls select,
+  .tauri-controls textarea {
+    background-color: #0000;
+    border-radius: 0;
+    color: inherit;
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    opacity: 1;
+  }
+  .tauri-controls ::file-selector-button {
+    background-color: #0000;
+    border-radius: 0;
+    color: inherit;
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    opacity: 1;
+  }
+  .tauri-controls :where(select:is([multiple], [size])) optgroup {
+    font-weight: bolder;
+  }
+  .tauri-controls :where(select:is([multiple], [size])) optgroup option {
+    padding-inline-start: 20px;
+  }
+  .tauri-controls ::file-selector-button {
+    margin-inline-end: 4px;
+  }
+  .tauri-controls ::-moz-placeholder {
+    opacity: 1;
+  }
+  .tauri-controls ::placeholder {
+    opacity: 1;
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button)) or
+    (contain-intrinsic-size: 1px) {
+    .tauri-controls ::-moz-placeholder {
+      color: currentColor;
+    }
+    .tauri-controls ::placeholder {
+      color: currentColor;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .tauri-controls ::-moz-placeholder {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+      .tauri-controls ::placeholder {
+        color: color-mix(in oklab, currentcolor 50%, transparent);
+      }
+    }
+  }
+  .tauri-controls textarea {
+    resize: vertical;
+  }
+  .tauri-controls ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  .tauri-controls ::-webkit-date-and-time-value {
+    min-height: 1lh;
+    text-align: inherit;
+  }
+  .tauri-controls ::-webkit-datetime-edit {
+    display: inline-flex;
+  }
+  .tauri-controls ::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  .tauri-controls ::-webkit-datetime-edit,
+  .tauri-controls ::-webkit-datetime-edit-year-field {
+    padding-block: 0;
+  }
+  .tauri-controls ::-webkit-datetime-edit-day-field,
+  .tauri-controls ::-webkit-datetime-edit-month-field {
+    padding-block: 0;
+  }
+  .tauri-controls ::-webkit-datetime-edit-hour-field,
+  .tauri-controls ::-webkit-datetime-edit-minute-field {
+    padding-block: 0;
+  }
+  .tauri-controls ::-webkit-datetime-edit-millisecond-field,
+  .tauri-controls ::-webkit-datetime-edit-second-field {
+    padding-block: 0;
+  }
+  .tauri-controls ::-webkit-datetime-edit-meridiem-field {
+    padding-block: 0;
+  }
+  .tauri-controls ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
+  .tauri-controls :-moz-ui-invalid {
+    box-shadow: none;
+  }
+  .tauri-controls button,
+  .tauri-controls
+    input:where([type="button"], [type="reset"], [type="submit"]) {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+  }
+  .tauri-controls ::file-selector-button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+  }
+  .tauri-controls ::-webkit-inner-spin-button,
+  .tauri-controls ::-webkit-outer-spin-button {
+    height: auto;
+  }
+  .tauri-controls [hidden]:where(:not([hidden="until-found"])) {
+    display: none !important;
+  }
+}
+@layer utilities {
+  .tauri-controls .invisible {
+    visibility: hidden !important;
+  }
+  .tauri-controls .fixed {
+    position: fixed !important;
+  }
+  .tauri-controls .relative {
+    position: relative !important;
+  }
+  .tauri-controls .start {
+    inset-inline-start: var(--spacing) !important;
+  }
+  .tauri-controls .top-1 {
+    top: calc(var(--spacing) * 1) !important;
+  }
+  .tauri-controls .right-1 {
+    right: calc(var(--spacing) * 1) !important;
+  }
+  .tauri-controls .m-0 {
+    margin: calc(var(--spacing) * 0) !important;
+  }
+  .tauri-controls .mr-2 {
+    margin-right: calc(var(--spacing) * 2) !important;
+  }
+  .tauri-controls .mr-\[10px\] {
+    margin-right: 10px !important;
+  }
+  .tauri-controls .ml-0 {
+    margin-left: calc(var(--spacing) * 0) !important;
+  }
+  .tauri-controls .ml-3 {
+    margin-left: calc(var(--spacing) * 3) !important;
+  }
+  .tauri-controls .ml-auto {
+    margin-left: auto !important;
+  }
+  .tauri-controls .flex {
+    display: flex !important;
+  }
+  .tauri-controls .hidden {
+    display: none !important;
+  }
+  .tauri-controls .inline-flex {
+    display: inline-flex !important;
+  }
+  .tauri-controls .aspect-square {
+    aspect-ratio: 1 !important;
+  }
+  .tauri-controls .h-2 {
+    height: calc(var(--spacing) * 2) !important;
+  }
+  .tauri-controls .h-3 {
+    height: calc(var(--spacing) * 3) !important;
+  }
+  .tauri-controls .h-6 {
+    height: calc(var(--spacing) * 6) !important;
+  }
+  .tauri-controls .h-8 {
+    height: calc(var(--spacing) * 8) !important;
+  }
+  .tauri-controls .h-10 {
+    height: calc(var(--spacing) * 10) !important;
+  }
+  .tauri-controls .h-\[9px\] {
+    height: 9px !important;
+  }
+  .tauri-controls .h-auto {
+    height: auto !important;
+  }
+  .tauri-controls .h-full {
+    height: 100% !important;
+  }
+  .tauri-controls .h-screen {
+    height: 100vh !important;
+  }
+  .tauri-controls .max-h-8 {
+    max-height: calc(var(--spacing) * 8) !important;
+  }
+  .tauri-controls .w-2 {
+    width: calc(var(--spacing) * 2) !important;
+  }
+  .tauri-controls .w-3 {
+    width: calc(var(--spacing) * 3) !important;
+  }
+  .tauri-controls .w-6 {
+    width: calc(var(--spacing) * 6) !important;
+  }
+  .tauri-controls .w-\[9px\] {
+    width: 9px !important;
+  }
+  .tauri-controls .w-\[46px\] {
+    width: 46px !important;
+  }
+  .tauri-controls .w-\[960px\] {
+    width: 960px !important;
+  }
+  .tauri-controls .w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+  .tauri-controls .w-full {
+    width: 100% !important;
+  }
+  .tauri-controls .cursor-default {
+    cursor: default !important;
+  }
+  .tauri-controls .flex-col {
+    flex-direction: column !important;
+  }
+  .tauri-controls .flex-row {
+    flex-direction: row !important;
+  }
+  .tauri-controls .content-center {
+    align-content: center !important;
+  }
+  .tauri-controls .items-center {
+    align-items: center !important;
+  }
+  .tauri-controls .justify-center {
+    justify-content: center !important;
+  }
+  :where(.tauri-controls .space-y-3 > :not(:last-child)) {
+    --tw-space-y-reverse: 0 !important;
+    margin-block-end: calc(
+      var(--spacing) * 3 * (1 - var(--tw-space-y-reverse))
+    ) !important;
+    margin-block-start: calc(
+      var(--spacing) * 3 * var(--tw-space-y-reverse)
+    ) !important;
+  }
+  :where(.tauri-controls .space-x-2 > :not(:last-child)) {
+    --tw-space-x-reverse: 0 !important;
+    margin-inline-end: calc(
+      var(--spacing) * 2 * (1 - var(--tw-space-x-reverse))
+    ) !important;
+    margin-inline-start: calc(
+      var(--spacing) * 2 * var(--tw-space-x-reverse)
+    ) !important;
+  }
+  :where(.tauri-controls .space-x-3 > :not(:last-child)) {
+    --tw-space-x-reverse: 0 !important;
+    margin-inline-end: calc(
+      var(--spacing) * 3 * (1 - var(--tw-space-x-reverse))
+    ) !important;
+    margin-inline-start: calc(
+      var(--spacing) * 3 * var(--tw-space-x-reverse)
+    ) !important;
+  }
+  :where(.tauri-controls .space-x-\[13px\] > :not(:last-child)) {
+    --tw-space-x-reverse: 0 !important;
+    margin-inline-end: calc(13px * (1 - var(--tw-space-x-reverse))) !important;
+    margin-inline-start: calc(13px * var(--tw-space-x-reverse)) !important;
+  }
+  .tauri-controls .self-center {
+    align-self: center !important;
+  }
+  .tauri-controls .overflow-auto {
+    overflow: auto !important;
+  }
+  .tauri-controls .overflow-hidden {
+    overflow: hidden !important;
+  }
+  .tauri-controls .rounded-full {
+    border-radius: 3.40282e38px !important;
+  }
+  .tauri-controls .rounded-md {
+    border-radius: var(--radius-md) !important;
+  }
+  .tauri-controls .rounded-none {
+    border-radius: 0 !important;
+  }
+  .tauri-controls .rounded-sm {
+    border-radius: var(--radius-sm) !important;
+  }
+  .tauri-controls .rounded-xl {
+    border-radius: var(--radius-xl) !important;
+  }
+  .tauri-controls .rounded-t-lg {
+    border-top-left-radius: var(--radius-lg) !important;
+    border-top-right-radius: var(--radius-lg) !important;
+  }
+  .tauri-controls .border {
+    border-style: var(--tw-border-style) !important;
+    border-width: 1px !important;
+  }
+  .tauri-controls .border-b {
+    border-bottom-style: var(--tw-border-style) !important;
+    border-bottom-width: 1px !important;
+  }
+  .tauri-controls .border-dashed {
+    --tw-border-style: dashed !important;
+    border-style: dashed !important;
+  }
+  .tauri-controls .border-none {
+    --tw-border-style: none !important;
+    border-style: none !important;
+  }
+  .tauri-controls .border-black\/12 {
+    border-color: #0000001f !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .border-black\/12 {
+      border-color: color-mix(
+        in oklab,
+        var(--color-black) 12%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .border-slate-400 {
+    border-color: var(--color-slate-400) !important;
+  }
+  .tauri-controls .bg-\[\#28c93f\] {
+    background-color: #28c93f !important;
+  }
+  .tauri-controls .bg-\[\#dadada\] {
+    background-color: #dadada !important;
+  }
+  .tauri-controls .bg-\[\#ff544d\] {
+    background-color: #ff544d !important;
+  }
+  .tauri-controls .bg-\[\#ffbd2e\] {
+    background-color: #ffbd2e !important;
+  }
+  .tauri-controls .bg-rose-700 {
+    background-color: var(--color-rose-700) !important;
+  }
+  .tauri-controls .bg-sky-500 {
+    background-color: var(--color-sky-500) !important;
+  }
+  .tauri-controls .bg-slate-200 {
+    background-color: var(--color-slate-200) !important;
+  }
+  .tauri-controls .bg-slate-300 {
+    background-color: var(--color-slate-300) !important;
+  }
+  .tauri-controls .bg-transparent {
+    background-color: #0000 !important;
+  }
+  .tauri-controls .bg-violet-200\/20 {
+    background-color: #ddd6ff33 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .bg-violet-200\/20 {
+      background-color: color-mix(
+        in oklab,
+        var(--color-violet-200) 20%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .bg-white {
+    background-color: var(--color-white) !important;
+  }
+  .tauri-controls .p-0 {
+    padding: calc(var(--spacing) * 0) !important;
+  }
+  .tauri-controls .p-2 {
+    padding: calc(var(--spacing) * 2) !important;
+  }
+  .tauri-controls .p-3 {
+    padding: calc(var(--spacing) * 3) !important;
+  }
+  .tauri-controls .px-2 {
+    padding-inline: calc(var(--spacing) * 2) !important;
+  }
+  .tauri-controls .px-3 {
+    padding-inline: calc(var(--spacing) * 3) !important;
+  }
+  .tauri-controls .px-14 {
+    padding-inline: calc(var(--spacing) * 14) !important;
+  }
+  .tauri-controls .py-1 {
+    padding-block: calc(var(--spacing) * 1) !important;
+  }
+  .tauri-controls .py-6 {
+    padding-block: calc(var(--spacing) * 6) !important;
+  }
+  .tauri-controls .pr-10 {
+    padding-right: calc(var(--spacing) * 10) !important;
+  }
+  .tauri-controls .pb-1 {
+    padding-bottom: calc(var(--spacing) * 1) !important;
+  }
+  .tauri-controls .text-center {
+    text-align: center !important;
+  }
+  .tauri-controls .font-mono {
+    font-family: var(--font-mono) !important;
+  }
+  .tauri-controls .text-lg {
+    font-size: var(--text-lg) !important;
+    line-height: var(--tw-leading, var(--text-lg--line-height)) !important;
+  }
+  .tauri-controls .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold) !important;
+    font-weight: var(--font-weight-semibold) !important;
+  }
+  .tauri-controls .whitespace-nowrap {
+    white-space: nowrap !important;
+  }
+  .tauri-controls .text-\[\#3d3d3d\] {
+    color: #3d3d3d !important;
+  }
+  .tauri-controls .text-black {
+    color: var(--color-black) !important;
+  }
+  .tauri-controls .text-black\/60 {
+    color: #0009 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .text-black\/60 {
+      color: color-mix(
+        in oklab,
+        var(--color-black) 60%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .text-black\/90 {
+    color: #000000e6 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .text-black\/90 {
+      color: color-mix(
+        in oklab,
+        var(--color-black) 90%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .text-sky-600\/70 {
+    color: #0084ccb3 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .text-sky-600\/70 {
+      color: color-mix(
+        in oklab,
+        var(--color-sky-600) 70%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .text-white\/36 {
+    color: #ffffff5c !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .text-white\/36 {
+      color: color-mix(
+        in oklab,
+        var(--color-white) 36%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .shadow,
+  .tauri-controls .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, #0000001a),
+      0 1px 2px -1px var(--tw-shadow-color, #0000001a) !important;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+      var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
+  }
+  .tauri-controls .select-none {
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+  }
+  @media (hover: hover) {
+    .tauri-controls .hover\:bg-\[\#28c93f\]:hover {
+      background-color: #28c93f !important;
+    }
+    .tauri-controls .hover\:bg-\[\#c42b1c\]:hover {
+      background-color: #c42b1c !important;
+    }
+    .tauri-controls .hover\:bg-\[\#d1d1d1\]:hover {
+      background-color: #d1d1d1 !important;
+    }
+    .tauri-controls .hover\:bg-\[\#ff544d\]:hover {
+      background-color: #ff544d !important;
+    }
+    .tauri-controls .hover\:bg-\[\#ffbd2e\]:hover {
+      background-color: #ffbd2e !important;
+    }
+    .tauri-controls .hover\:bg-black\/5:hover {
+      background-color: #0000000d !important;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .tauri-controls .hover\:bg-black\/5:hover {
+        background-color: color-mix(
+          in oklab,
+          var(--color-black) 5%,
+          transparent
+        ) !important;
+      }
+    }
+    .tauri-controls .hover\:text-white:hover {
+      color: var(--color-white) !important;
+    }
+  }
+  .tauri-controls .active\:bg-\[\#1e9930\]:active {
+    background-color: #1e9930 !important;
+  }
+  .tauri-controls .active\:bg-\[\#bf403a\]:active {
+    background-color: #bf403a !important;
+  }
+  .tauri-controls .active\:bg-\[\#bf9122\]:active {
+    background-color: #bf9122 !important;
+  }
+  .tauri-controls .active\:bg-\[\#bfbfbf\]:active {
+    background-color: #bfbfbf !important;
+  }
+  .tauri-controls .active\:bg-\[\#c42b1c\]\/90:active {
+    background-color: #c42b1ce6 !important;
+  }
+  .tauri-controls .active\:bg-black\/3:active {
+    background-color: #00000008 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .active\:bg-black\/3:active {
+      background-color: color-mix(
+        in oklab,
+        var(--color-black) 3%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .active\:text-black:active {
+    color: var(--color-black) !important;
+  }
+  .tauri-controls .active\:text-black\/60:active {
+    color: #0009 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .active\:text-black\/60:active {
+      color: color-mix(
+        in oklab,
+        var(--color-black) 60%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .dark\:border-none:where(.dark, .dark *) {
+    --tw-border-style: none !important;
+    border-style: none !important;
+  }
+  .tauri-controls .dark\:border-slate-600:where(.dark, .dark *) {
+    border-color: var(--color-slate-600) !important;
+  }
+  .tauri-controls .dark\:bg-\[\#373737\]:where(.dark, .dark *) {
+    background-color: #373737 !important;
+  }
+  .tauri-controls .dark\:bg-slate-800:where(.dark, .dark *) {
+    background-color: var(--color-slate-800) !important;
+  }
+  .tauri-controls .dark\:bg-slate-900:where(.dark, .dark *) {
+    background-color: var(--color-slate-900) !important;
+  }
+  .tauri-controls .dark\:bg-slate-950\/50:where(.dark, .dark *) {
+    background-color: #02061880 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .dark\:bg-slate-950\/50:where(.dark, .dark *) {
+      background-color: color-mix(
+        in oklab,
+        var(--color-slate-950) 50%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .dark\:text-black:where(.dark, .dark *) {
+    color: var(--color-black) !important;
+  }
+  .tauri-controls .dark\:text-sky-300\/70:where(.dark, .dark *) {
+    color: #77d4ffb3 !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .dark\:text-sky-300\/70:where(.dark, .dark *) {
+      color: color-mix(
+        in oklab,
+        var(--color-sky-300) 70%,
+        transparent
+      ) !important;
+    }
+  }
+  .tauri-controls .dark\:text-white:where(.dark, .dark *) {
+    color: var(--color-white) !important;
+  }
+  @media (hover: hover) {
+    .tauri-controls .dark\:hover\:bg-\[\#424242\]:where(.dark, .dark *):hover {
+      background-color: #424242 !important;
+    }
+    .tauri-controls .dark\:hover\:bg-white\/6:where(.dark, .dark *):hover {
+      background-color: #ffffff0f !important;
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .tauri-controls .dark\:hover\:bg-white\/6:where(.dark, .dark *):hover {
+        background-color: color-mix(
+          in oklab,
+          var(--color-white) 6%,
+          transparent
+        ) !important;
+      }
+    }
+  }
+  .tauri-controls .dark\:active\:bg-\[\#565656\]:where(.dark, .dark *):active {
+    background-color: #565656 !important;
+  }
+  .tauri-controls .dark\:active\:bg-white\/4:where(.dark, .dark *):active {
+    background-color: #ffffff0a !important;
+  }
+  @supports (color: color-mix(in lab, red, red)) {
+    .tauri-controls .dark\:active\:bg-white\/4:where(.dark, .dark *):active {
+      background-color: color-mix(
+        in oklab,
+        var(--color-white) 4%,
+        transparent
+      ) !important;
+    }
+  }
+}
+.tauri-controls button,
+.tauri-controls input,
+.tauri-controls optgroup,
+.tauri-controls select,
+.tauri-controls textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #0000;
+  border: none;
+  border-radius: 0;
+  color: inherit;
+  cursor: default;
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-size: 100%;
+  font-variation-settings: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+.tauri-controls * {
+  box-sizing: border-box;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}

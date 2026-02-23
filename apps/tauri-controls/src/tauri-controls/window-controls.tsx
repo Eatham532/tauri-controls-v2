@@ -23,7 +23,7 @@ export function WindowControls({
   }, [])
 
   const customClass = cn(
-    "tauri-controls flex",
+    "flex",
     className,
     hide && (hideMethod === "display" ? "hidden" : "invisible")
   )
@@ -70,8 +70,10 @@ export function WindowControls({
   }
 
   return (
-    <TauriAppWindowProvider>
-      <ControlsComponent />
-    </TauriAppWindowProvider>
+    <div className="tauri-controls" style={{ display: "contents" }}>
+      <TauriAppWindowProvider>
+        <ControlsComponent />
+      </TauriAppWindowProvider>
+    </div>
   )
 }

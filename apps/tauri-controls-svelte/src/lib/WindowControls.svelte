@@ -17,7 +17,7 @@
   })
 
   const customClass = cn(
-    "tauri-controls flex",
+    "flex",
     $$props.class,
     hide && (hideMethod === "display" ? "hidden" : "invisible")
   )
@@ -37,12 +37,14 @@
   }
 </script>
 
-{#if platform === "windows"}
-  <Windows {...$$props} class={cn(customClass, justify && "ml-auto")} />
-{:else if platform === "macos"}
-  <MacOs {...$$props} class={cn(customClass, justify && "ml-0")} />
-{:else if platform === "gnome"}
-  <Gnome {...$$props} class={cn(customClass, justify && "ml-auto")} />
-{:else}
-  <Windows {...$$props} class={cn(customClass, justify && "ml-auto")} />
-{/if}
+<div class="tauri-controls" style="display: contents">
+  {#if platform === "windows"}
+    <Windows {...$$props} class={cn(customClass, justify && "ml-auto")} />
+  {:else if platform === "macos"}
+    <MacOs {...$$props} class={cn(customClass, justify && "ml-0")} />
+  {:else if platform === "gnome"}
+    <Gnome {...$$props} class={cn(customClass, justify && "ml-auto")} />
+  {:else}
+    <Windows {...$$props} class={cn(customClass, justify && "ml-auto")} />
+  {/if}
+</div>

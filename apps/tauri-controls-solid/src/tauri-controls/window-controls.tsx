@@ -19,23 +19,25 @@ export function WindowControls(props: WindowControlsProps) {
   const hideMethod = () => local.hideMethod ?? "display"
   const className = () =>
     twMerge(
-      "tauri-controls flex",
+      "flex",
       local.class,
       local.hide && (hideMethod() === "display" ? "hidden" : "invisible"),
       local.justify && (platform() === "macos" ? "ml-0" : "ml-auto")
     )
 
   return (
-    <Switch>
-      <Match when={platform() === "macos"}>
-        <MacOS class={className()} {...otherProps} />
-      </Match>
-      <Match when={platform() === "gnome"}>
-        <Gnome class={className()} {...otherProps} />
-      </Match>
-      <Match when={true}>
-        <Windows class={className()} {...otherProps} />
-      </Match>
-    </Switch>
+    <div class="tauri-controls" style={{ display: "contents" }}>
+      <Switch>
+        <Match when={platform() === "macos"}>
+          <MacOS class={className()} {...otherProps} />
+        </Match>
+        <Match when={platform() === "gnome"}>
+          <Gnome class={className()} {...otherProps} />
+        </Match>
+        <Match when={true}>
+          <Windows class={className()} {...otherProps} />
+        </Match>
+      </Switch>
+    </div>
   )
 }

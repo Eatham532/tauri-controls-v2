@@ -29,19 +29,21 @@
   }
 </script>
 
-<div
-  {...$$props}
-  class={cn(
-    "tauri-controls bg-background flex select-none flex-row overflow-hidden",
-    $$props.class
-  )}
-  data-tauri-drag-region
->
-  {#if left}
-    <WindowControls {...props("ml-0")} />
-    <slot />
-  {:else}
-    <slot />
-    <WindowControls {...props("ml-auto")} />
-  {/if}
+<div class="tauri-controls" style="display: contents">
+  <div
+    {...$$props}
+    class={cn(
+      "bg-background flex select-none flex-row overflow-hidden",
+      $$props.class
+    )}
+    data-tauri-drag-region
+  >
+    {#if left}
+      <WindowControls {...props("ml-0")} />
+      <slot />
+    {:else}
+      <slot />
+      <WindowControls {...props("ml-auto")} />
+    {/if}
+  </div>
 </div>

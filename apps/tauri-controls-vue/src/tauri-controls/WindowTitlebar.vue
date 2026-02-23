@@ -42,22 +42,24 @@ const customProps = (ml: string) => {
 </script>
 
 <template>
-  <div
-    :class="
-      twMerge(
-        'tauri-controls bg-background flex flex-row overflow-hidden select-none',
-        $attrs.class as string
-      )
-    "
-    data-tauri-drag-region
-  >
-    <template v-if="left">
-      <WindowControls :="customProps('ml-0')" />
-      <slot />
-    </template>
-    <template v-else>
-      <slot />
-      <WindowControls :="customProps('ml-auto')" />
-    </template>
+  <div class="tauri-controls" style="display: contents">
+    <div
+      :class="
+        twMerge(
+          'bg-background flex flex-row overflow-hidden select-none',
+          $attrs.class as string
+        )
+      "
+      data-tauri-drag-region
+    >
+      <template v-if="left">
+        <WindowControls :="customProps('ml-0')" />
+        <slot />
+      </template>
+      <template v-else>
+        <slot />
+        <WindowControls :="customProps('ml-auto')" />
+      </template>
+    </div>
   </div>
 </template>

@@ -35,15 +35,17 @@ export function WindowTitlebar(props: WindowTitlebarProps) {
   const controls = <WindowControls {...windowControlsProps} />
 
   return (
-    <div
-      class={twMerge(
-        "tauri-controls bg-background flex flex-row overflow-hidden select-none",
-        local.class
-      )}
-      data-tauri-drag-region
-      {...otherProps}
-    >
-      {left() ? [controls, local.children] : [local.children, controls]}
+    <div class="tauri-controls" style={{ display: "contents" }}>
+      <div
+        class={twMerge(
+          "bg-background flex flex-row overflow-hidden select-none",
+          local.class
+        )}
+        data-tauri-drag-region
+        {...otherProps}
+      >
+        {left() ? [controls, local.children] : [local.children, controls]}
+      </div>
     </div>
   )
 }
