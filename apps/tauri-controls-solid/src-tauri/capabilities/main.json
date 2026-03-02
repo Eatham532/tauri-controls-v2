@@ -5,6 +5,7 @@
   "permissions": [
     "core:path:default",
     "core:event:default",
+    "core:webview:default",
     "core:window:default",
     "core:window:allow-close",
     "core:window:allow-minimize",
@@ -20,4 +21,3 @@
     "os:default"
   ]
 }
-
