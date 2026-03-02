@@ -1,23 +1,12 @@
-import { type } from "@tauri-apps/plugin-os"
-import type { OsType } from "@tauri-apps/plugin-os"
+import { type, type OsType } from "@tauri-apps/plugin-os"
 
-let osType: OsType | undefined = undefined
-let osTypePromise: Promise<OsType> | null = null
+export let osType: OsType
 
 if (typeof window !== "undefined") {
-  osTypePromise = type().then((x) => {
-    osType = x
-    return x
-  })
+  osType = type()
 }
 
-// A helper function to get the OS type, which returns a Promise
-export function getOsType(): Promise<OsType> {
-  if (!osTypePromise) {
-    if (osType) return Promise.resolve(osType)
-    return Promise.resolve("windows" as OsType)
-  }
-
-  // If the module is still loading, wait for it to finish and return the result
-  return osTypePromise
+export function getOsType(): OsType {
+  if (osType) return osType
+  return type()
 }

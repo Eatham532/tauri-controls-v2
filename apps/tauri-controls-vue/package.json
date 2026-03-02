@@ -38,30 +38,30 @@
   "module": "./dist/tauri-controls.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "@vueuse/core": "^13.0.0"
+    "@vueuse/core": "^13.9.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@rollup/plugin-terser": "^0.4.4",
-    "@tailwindcss/vite": "^4.2.0",
-    "@tauri-apps/api": "^2.1.0",
-    "@tauri-apps/cli": "^2.1.0",
-    "@tauri-apps/plugin-os": "^2.1.0",
-    "@types/node": "^25.3.0",
+    "@tailwindcss/vite": "^4.2.1",
+    "@tauri-apps/api": "^2.10.1",
+    "@tauri-apps/cli": "^2.10.0",
+    "@tauri-apps/plugin-os": "^2.3.2",
+    "@types/node": "^25.3.3",
     "@vitejs/plugin-vue": "^6.0.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-vue": "^10.8.0",
     "postcss": "^8.5.6",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss": "^4.2.0",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.56.0",
+    "tailwind-merge": "^3.5.0",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4",
-    "vue": "^3.5.13",
-    "vue-tsc": "^2.2.0"
+    "vue": "^3.5.29",
+    "vue-tsc": "^2.2.12"
   },
   "peerDependencies": {
     "tailwind-merge": "^3.0.1",
